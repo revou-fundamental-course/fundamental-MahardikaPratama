@@ -12,27 +12,26 @@
         <div class="logo-icon"></div>
 
         <nav>
-            <a>Home</a>
+            <a href="#home">Home</a>
             <a href="#our-profile">Our Profile</a>
-            <a>Portofolio</a>
-            <a>Message Us</a>
+            <a href="#portfolio">Portofolio</a>
+            <a href="#message-us">Message Us</a>
         </nav>
     </header>
     <hr />
 
     <main>
-
         <!-- Ini Home Content -->
-        <section>
+        <section  id="home">
             <header>
-                <h1> Hi User, Welcome to Website</h1>
+                <h1> Hi <span id="userName">User</span>, Welcome to Website</h1>
             </header>
 
             <article>
                 <p>Ini adalah website portofolio saya</p>
-
                 <div class="banner-container"></div>
             </article>
+            <button id="replaceName">Ganti Nama</button>
         </section>
         <hr />
         <!-- Ini Our Profile Content -->
@@ -62,12 +61,67 @@
 
                 <div class="profile-container"></div>
         </section>
+        <hr />
 
         <!-- Ini Portofolio Content -->
+        <section id="portfolio">
+            <header>
+                <h1>Portofolio</h1>
+            </header>
+            <!-- Tambahkan konten portofolio di sini -->
+        </section>
+        <hr />
 
         <!-- Ini Message Us Content -->
+        <section id="message-us">
+            <header>
+                <h1>Message Us</h1>
+            </header>
+            <div class="message-container">
+                <form name="message-form" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="full-name">Nama</label>
+                        <span>:</span>
+                        <input type="text" id="full-name" name="full-name" placeholder="Nama">
+                    </div>
+                    <div class="form-group">
+                        <label for="birth-date">Tanggal Lahir</label>
+                        <span>:</span>
+                        <input type="date" id="birth-date" name="birth-date">
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Kelamin</label>
+                        <span>:</span>
+                        <div class="radio-group">
+                            <input type="radio" id="male" name="gender" value="Laki-Laki">
+                            <label for="male">Laki-laki</label>
+                            <input type="radio" id="female" name="gender" value="Perempuan">
+                            <label for="female">Perempuan</label>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-messages">
+                        <label for="messages">Pesan</label>
+                        <span>:</span>
+                        <textarea id="messages" name="messages" placeholder="Pesan"></textarea>
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="output">
+                    <p>Current time: <span id="currentTime"></span></p>
+                    <br />
+                    <p>Nama: <span id="sender-full-name"></span></p>
+                    <p>Tanggal Lahir: <span id="sender-birth-date"></span></p>
+                    <p>Jenis Kelamin: <span id="sender-gender"></span></p>
+                    <p>Pesan: <span id="sender-messages"></span></p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    
+    <footer>
+        <p>Created by Mahardika Pratama | <a href="https://www.linkedin.com/in/mahardika-pratama-381207243/">LinkedIn</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

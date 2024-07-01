@@ -1,69 +1,215 @@
 /* Ini CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-main{
+body {
+    font-family: Arial, sans-serif;
+}
+
+main {
     padding: 32px;
 }
 
-.nav-container{
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px 20px;
 }
 
-.logo-icon{
+.logo-icon {
     height: 100px;
     width: 100px;
-
     /* for image icon */
-    background-image: url(https://picsum.photos/500/500);
+    background-image: url(../assets/logo_company.png);
     background-size: cover;
     border-radius: 50%;
 }
 
-nav >a{
-    padding-left: 32px;
-    padding-right: 32px;
-    border: 1px solid black;
+nav > a {
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+nav > a:hover {
+    background-color: #eee;
 }
 
 .banner-container {
     height: 500px;
     width: 100%;
     border: 1px solid black;
+    margin: 20px 0;
 }
 
-.profile-content{
+.profile-content {
     display: flex;
     justify-content: space-evenly;
+    gap: 20px;
 }
 
 .profile-item {
     text-align: center;
     flex: 1;
-    text-align: -webkit-center;
 }
 
-.profile-icon{
+.profile-icon {
     height: 50px;
     width: 50px;
-
     /* for image icon */
     background-size: cover;
     border-radius: 50%;
+    margin: 0 auto;
 }
 
-.profile-1{
+.profile-1 {
     background-image: url(../assets/1.png);
 }
 
-.profile-2{
+.profile-2 {
     background-image: url(../assets/2.png);
 }
 
-.profile-3{
+.profile-3 {
     background-image: url(../assets/3.png);
 }
 
-.divider{
-    flex: 2;
+/* CSS untuk bagian Message Us */
+/* Flexbox untuk form dan output */
+.message-container {
+    display: flex;
+    justify-content: space-between;
 }
+
+.message-container form,
+.message-container .output {
+    width: 48%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-container form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.message-container form .form-group label {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.message-container form .form-group-messages label, .message-container form .form-group-messages span {
+    margin-bottom: 60px;
+}
+
+.message-container form .form-group span {
+    margin-right: 10px;
+}
+
+.message-container form .form-group input,
+.message-container form .form-group textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.message-container form .form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+
+.message-container form input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #808080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.message-container form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.message-container .output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message-container .output p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.message-container .output span {
+    font-weight: normal;
+}
+
+/* footer {
+    background-color: gray; 
+    color: #fff; 
+    text-align: center; 
+    padding: 20px 0; 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    font-size: 14px; 
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+footer p {
+    margin: 0; 
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline; 
+    margin-left: 10px;
+}
+
+footer a:hover {
+    color: #ddd; 
+} */
+
+/* @media (max-width: 768px) {
+    .message-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label {
+        text-align: left;
+    }
+
+    .message-form {
+        width: 100%;
+    }
+
+    .result-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+} */
