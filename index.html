@@ -4,62 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Mahardika Pratama</title>
+    <!-- Link untuk mengambil ikon dari Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Menghubungkan dengan file CSS kustom -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Ini Header Nav -->
-    <header class="nav-container">
-        <div class="logo-icon"></div>
-
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#our-profile">Our Profile</a>
-            <a href="#portfolio">Portofolio</a>
-            <a href="#message-us">Message Us</a>
+    <header class="header">
+        <div class="logo"></div>
+        <!-- Checkbox yang tersembunyi untuk menu toggle -->
+        <input type="checkbox" id="nav-check" hidden>
+        <!-- Navigasi utama -->
+        <nav class="nav">
+            <ul class="nav-list">
+                <!-- Item navigasi -->
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about-me" class="nav-link">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portofolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#message-us" class="nav-link">Message Us</a>
+                </li>
+            </ul>
         </nav>
+        <!-- Label hamburger untuk toggle menu -->
+        <label for="nav-check" class="hamburger">
+            <!-- Garis-garis hamburger -->
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </label>
     </header>
     <hr />
 
     <main>
         <!-- Ini Home Content -->
-        <section  id="home">
+        <section id="home">
             <header>
-                <h1> Hi <span id="userName">User</span>, Welcome to Website</h1>
+                <!-- Header di dalam banner -->
             </header>
-
-            <article>
-                <p>Ini adalah website portofolio saya</p>
-                <div class="banner-container"></div>
-            </article>
-            <button id="replaceName">Ganti Nama</button>
-        </section>
+            <div class="banner-container">
+                <!-- Slider gambar -->
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="assets/product-1.png" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/product-2.png" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/product-3.png" alt="Slide 3">
+                        </div>
+                    </div>
+                </div>
+                <!-- Text di dalam banner -->
+                <div class="banner-text">
+                    <h1>Hi <span id="username">User</span>, Welcome to My Website</h1>
+                    <p>Ini adalah website portofolio saya</p>
+                    <button id="replaceName">Ganti Nama</button>
+                </div>
+            </div>
+        </section>        
         <hr />
-        <!-- Ini Our Profile Content -->
-        <section id="our-profile">
+
+        <!-- Ini About Me Content -->
+        <section id="about-me">
             <header>
-                <h1>Our Profile</h1>
+                <h1>About Me</h1>
             </header>
 
-            <article class="profile-content">
-                <div class="profile-item">
-                    <div class="profile-icon profile-1"></div>
-                    <p>Profile 1</p>
+            <article class="about-me-content">
+                <!-- Konten tentang saya -->
+                <div class="profile-container">
+                    <img src="assets/profile.png" alt="Foto Profil" class="profile-picture">
+                    <div class="profile-details">
+                        <h2>Mahardika Pratama</h2>
+                        <p>Halo! Saya adalah seorang mahasiswa Teknik Informatika di <strong>Politeknik Negeri Bandung</strong>. Saya sangat menyukai dunia teknologi dan selalu berusaha untuk mengasah kemampuan saya dalam bidang ini. Ketertarikan saya pada komputer dan pemrograman telah membawa saya pada banyak proyek menarik dan menantang.</p>
+                        <p>Di waktu luang, saya suka menonton film dan bermain game. Saya percaya bahwa hiburan adalah bagian penting dari kehidupan, yang membantu menjaga keseimbangan antara studi dan relaksasi. Selain itu, saya juga menikmati mengeksplorasi teknologi baru dan bagaimana mereka dapat diterapkan dalam kehidupan sehari-hari.</p>
+                        <button id="cvBtn">My CV</button>
+                    </div>
                 </div>
-
-                <div class="profile-item">
-                    <div class="profile-icon profile-2"></div>
-                    <p>Profile 2</p>
-                </div>
-
-                <div class="profile-item">
-                    <div class="profile-icon profile-3"></div>
-                    <p>Profile 3</p>
-                </div>
-
-                <div class="divider"></div>
             </article>
-
-                <div class="profile-container"></div>
         </section>
         <hr />
 
@@ -68,7 +100,50 @@
             <header>
                 <h1>Portofolio</h1>
             </header>
-            <!-- Tambahkan konten portofolio di sini -->
+            <article class="portfolio-content">
+                <!-- Daftar proyek -->
+                <div class="projects-container">
+                    <!-- Setiap proyek -->
+                    <div class="project">
+                        <h2>HUFFMAN CODING PROGRAM FOR IMAGE COMPRESSION</h2>
+                        <p><strong>Peran:</strong> PROGRAMMER</p>
+                        <p><strong>Tanggal:</strong> Mar 2023 - May 2023</p>
+                        <p>Implemented a Huffman coding program for image compression, showcasing proficiency in manipulating data structures and algorithmic design, grounded in the principles of Huffman tree data structures.</p>
+                        <!-- Tombol GitHub -->
+                        <div class="github-button">
+                            <a href="https://github.com/hanswryy/PPMHuffmanCoding" target="_blank" class="btn-github">
+                                <i class="fa-brands fa-github"></i> Visit GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <h2>WEBSITE E-COMMERCE HALAL MARKET</h2>
+                        <p><strong>Peran:</strong> BACKEND DEVELOPER</p>
+                        <p><strong>Tanggal:</strong> Mar 2023 - May 2023</p>
+                        <p>Successfully developed an e-commerce website for a Halal market utilizing Java language, MongoDB database, and Thymeleaf for processing HTML text into a website. The program is crafted based on the Model-View-Controller (MVC) framework principles, ensuring efficient and organized website structure.</p>
+                        <!-- Tombol GitHub -->
+                        <div class="github-button">
+                            <a href="https://github.com/tmfadhi12/tekprotubes" target="_blank" class="btn-github">
+                                <i class="fa-brands fa-github"></i> Visit GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <h2>LEVERAGING RDBMS PRINCIPLES IN REALISTIC DATABASE MODELING</h2>
+                        <p><strong>Peran:</strong> DESIGNER AND PROGRAMMER</p>
+                        <p><strong>Tanggal:</strong> NOV 2023 - DEC 2023</p>
+                        <p>As a Designer and Programmer, I crafted comprehensive database structures using Chen notation diagrams and implemented databases based on the design, utilizing Oracle as the underlying database. I integrated advanced SQL concepts, including triggers, to ensure robust data management aligned with RDBMS principles, specifically with Oracle support, for real-world applications.</p>
+                        <!-- Tombol GitHub -->
+                        <div class="github-button">
+                            <a href="https://github.com/FahriYuwan/tubes_sbd_smt3" target="_blank" class="btn-github">
+                                <i class="fa-brands fa-github"></i> Visit GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </section>
         <hr />
 
@@ -79,6 +154,7 @@
             </header>
             <div class="message-container">
                 <form name="message-form" onsubmit="return validateForm()">
+                    <!-- Kolom input untuk pengguna mengisi informasi -->
                     <div class="form-group">
                         <label for="full-name">Nama</label>
                         <span>:</span>
@@ -104,8 +180,10 @@
                         <span>:</span>
                         <textarea id="messages" name="messages" placeholder="Pesan"></textarea>
                     </div>
+                    <!-- Tombol untuk mengirimkan form -->
                     <input type="submit" value="Submit">
                 </form>
+                <!-- Kolom output untuk menampilkan informasi yang sudah diisi -->
                 <div class="output">
                     <p>Current time: <span id="currentTime"></span></p>
                     <br />
@@ -117,11 +195,13 @@
             </div>
         </section>
     </main>
-
+    <!-- Ini Footer -->
     <footer>
+        <!-- Informasi pembuat website -->
         <p>Created by Mahardika Pratama | <a href="https://www.linkedin.com/in/mahardika-pratama-381207243/">LinkedIn</a></p>
     </footer>
 
+    <!-- Script JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>

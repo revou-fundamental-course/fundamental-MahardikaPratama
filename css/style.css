@@ -1,94 +1,455 @@
 /* Ini CSS */
+
+/* Mengimpor font Poppins dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Popppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reset default CSS */
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
+/* Styling untuk body */
 body {
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #ddeeff 100%);
+    overflow: auto; /* Memastikan konten yang panjang dapat di-scroll */
 }
 
+/* Styling untuk main content */
 main {
     padding: 32px;
 }
 
-.nav-container {
+/* Styling untuk header */
+.header {
+    width: 100%;
+    height: 70px;
+    background: #088395;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #f8f8f8;
-    padding: 10px 20px;
+    justify-content: space-between;
+    padding: 0 50px;
+    z-index: 1000;
 }
 
-.logo-icon {
-    height: 100px;
-    width: 100px;
-    /* for image icon */
+/* Styling untuk logo */
+.logo {
+    height: 50px;
+    width: 50px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fefefe;
     background-image: url(../assets/logo_company.png);
     background-size: cover;
     border-radius: 50%;
+    margin-left: 10px;
 }
 
-nav > a {
-    padding: 10px 20px;
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: background-color 0.3s;
-}
-
-nav > a:hover {
-    background-color: #eee;
-}
-
-.banner-container {
-    height: 500px;
-    width: 100%;
-    border: 1px solid black;
-    margin: 20px 0;
-}
-
-.profile-content {
+/* Styling untuk navigasi */
+.nav {
     display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
 }
 
-.profile-item {
+.nav-list {
+    display: flex;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.nav-link {
+    display: inline-block;
+    color: #fefefe;
+    padding: 5px 0;
+    margin: 0 10px;
+    border: 3px solid transparent;
+    transition: 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #000;
+}
+
+/* Styling untuk hamburger menu (menu toggle di layar kecil) */
+.hamburger {
+    cursor: pointer;
+    display: none; /* Awalnya tersembunyi */
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #000;
+}
+
+/* Media query untuk layar menengah (max-width: 900px) */
+@media only screen and (max-width: 900px) {
+    .header {
+        padding: 0 30px; /* Mengurangi padding header */
+    }
+}
+
+/* Media query untuk layar kecil (max-width: 700px) */
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block; /* Tampilkan hamburger menu */
+    }
+
+    .nav {
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        left: -100%; /* Sembunyikan navigasi di luar layar */
+        background: #088395;
+        padding: 30px;
+        transition: 0.2s;
+        z-index: 999;
+    }
+
+    /* Menampilkan navigasi saat checkbox nav-check dicek */
+    #nav-check:checked ~ .nav {
+        left: 0;
+    }
+
+    .nav-list {
+        display: block;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+}
+
+/* Styling untuk slider */
+.banner-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Sesuaikan tinggi slider */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Styling untuk teks dan tombol di dalam banner */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#replaceName {
+    background-color: #088395;
+    color: #fefefe;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#replaceName:hover {
+    background-color: #088395;
+}
+
+/* Media query untuk layar kecil (max-width: 768px) */
+@media (max-width: 768px) {
+    .slider {
+        height: 300px; /* Sesuaikan tinggi slider */
+    }
+
+    .banner-text h1 {
+        font-size: 1.5em;
+    }
+
+    .banner-text p {
+        font-size: 1em;
+    }
+}
+
+/* Media query untuk layar sangat kecil (max-width: 480px) */
+@media (max-width: 480px) {
+    .slider {
+        height: 200px; /* Sesuaikan tinggi slider */
+    }
+
+    .banner-text h1 {
+        font-size: 1.2em;
+    }
+
+    .banner-text p {
+        font-size: 0.9em;
+    }
+}
+
+/* Styling untuk bagian About Me */
+#about-me {
+    padding: 50px 20px;
+    color: #088395;
     text-align: center;
-    flex: 1;
 }
 
-.profile-icon {
-    height: 50px;
-    width: 50px;
-    /* for image icon */
-    background-size: cover;
+#about-me header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #088395;
+}
+
+.about-me-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 64, 128, 0.2);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    margin: 0 auto;
+    object-fit: cover;
+    border: 4px solid #088395;
+    box-shadow: 0 4px 8px rgba(0, 64, 128, 0.2);
+    transition: transform 0.3s;
 }
 
-.profile-1 {
-    background-image: url(../assets/1.png);
+.profile-picture:hover {
+    transform: scale(1.1);
 }
 
-.profile-2 {
-    background-image: url(../assets/2.png);
+.profile-details {
+    text-align: center;
 }
 
-.profile-3 {
-    background-image: url(../assets/3.png);
+.profile-details h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #088395;
 }
 
-/* CSS untuk bagian Message Us */
-/* Flexbox untuk form dan output */
+.profile-details p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #088395;
+}
+
+#cvBtn {
+    background: #088395;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+#cvBtn:hover {
+    background: #002060;
+}
+
+/* Media query untuk layar kecil (max-width: 768px) */
+@media (max-width: 768px) {
+    .about-me-content {
+        flex-direction: column; /* Tampilkan konten About Me dalam satu kolom */
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-details h2 {
+        font-size: 1.5em;
+    }
+
+    .profile-details p {
+        font-size: 1em;
+    }
+}
+
+/* Styling untuk bagian Portofolio */
+#portfolio {
+    padding: 50px 20px;
+    color: #333;
+    text-align: center;
+}
+
+#portfolio header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #088395;
+}
+
+.portfolio-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.project {
+    flex: 0 1 calc(30% - 20px);
+    text-align: left;
+    padding: 20px;
+    border: 2px solid #e0f7ff;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project h2 {
+    font-size: 1.8em;
+    color: #088395;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 64, 128, 0.3);
+}
+
+/* Media query untuk layar besar (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .project {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+/* Media query untuk layar kecil (max-width: 768px) */
+@media (max-width: 768px) {
+    .project {
+        flex-basis: calc(100% - 20px);
+    }
+
+    .project h2 {
+        font-size: 1.5em;
+    }
+
+    .project p {
+        font-size: 1em;
+    }
+}
+
+/* Styling untuk tombol GitHub */
+.github-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-github {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-github i {
+    margin-right: 10px;
+}
+
+.btn-github:hover {
+    background-color: #24292e;
+    transform: scale(1.05);
+}
+
+/* Media query untuk layar kecil (max-width: 768px) */
+@media (max-width: 768px) {
+    .btn-github {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+/* Styling untuk bagian Message Us */
+#message-us {
+    padding: 50px 20px;
+    color: #333;
+    text-align: left;
+}
+
+#message-us header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #088395;
+    text-align: center;
+}
+
 .message-container {
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
 
 .message-container form,
@@ -103,16 +464,12 @@ nav > a:hover {
 .message-container form .form-group {
     margin-bottom: 15px;
     display: flex;
-    align-items: center;
+    align-items: left;
 }
 
 .message-container form .form-group label {
     width: 150px;
     margin-right: 10px;
-}
-
-.message-container form .form-group-messages label, .message-container form .form-group-messages span {
-    margin-bottom: 60px;
 }
 
 .message-container form .form-group span {
@@ -132,11 +489,10 @@ nav > a:hover {
     resize: vertical;
 }
 
-
 .message-container form input[type="submit"] {
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #808080;
+    background-color: #088395;
     color: white;
     border: none;
     border-radius: 4px;
@@ -145,10 +501,14 @@ nav > a:hover {
 }
 
 .message-container form input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #002060;
 }
 
 .message-container .output {
+    width: 48%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,16 +523,44 @@ nav > a:hover {
     font-weight: normal;
 }
 
-/* footer {
-    background-color: gray; 
-    color: #fff; 
+/* Media query untuk layar kecil (max-width: 768px) */
+@media (max-width: 768px) {
+    .message-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message-container form .form-group {
+        flex-direction: column; /* Tampilkan form dalam satu kolom */
+        align-items: flex-start;
+    }
+
+    .message-container form,
+    .message-container .output {
+        width: 100%;
+    }
+
+    .message-container form .form-group label {
+        width: auto; /* Atur lebar label agar otomatis */
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .message-container form .form-group span {
+        display: none; /* Sembunyikan span yang tidak diperlukan */
+    }
+}
+
+/* Styling untuk bagian footer */
+footer {
+    background-color: #088395; 
+    color: #fefefe; 
     text-align: center; 
     padding: 20px 0; 
-    position: fixed; 
     bottom: 0; 
     width: 100%; 
     font-size: 14px; 
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
@@ -180,36 +568,11 @@ footer p {
 }
 
 footer a {
-    color: #fff;
+    color: #fefefe; 
     text-decoration: underline; 
-    margin-left: 10px;
+    margin-left: 10px; 
 }
 
 footer a:hover {
-    color: #ddd; 
-} */
-
-/* @media (max-width: 768px) {
-    .message-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .form-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .form-group label {
-        text-align: left;
-    }
-
-    .message-form {
-        width: 100%;
-    }
-
-    .result-container {
-        width: 100%;
-        margin-top: 20px;
-    }
-} */
+    color: #000; 
+}
