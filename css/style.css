@@ -523,6 +523,29 @@ main {
     font-weight: normal;
 }
 
+.message-container form .form-group input[type="text"],
+.message-container form .form-group textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 10px);
+}
+
+.message-container form .form-group.text-group {
+    flex-direction: column;
+}
+
+.message-container form .form-group.text-group label {
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 5px;
+}
+
+.message-container form .form-group.text-group span {
+    display: none;
+}
+
 /* Media query untuk layar kecil (max-width: 768px) */
 @media (max-width: 768px) {
     .message-container {
@@ -541,7 +564,7 @@ main {
     }
 
     .message-container form .form-group label {
-        width: auto; /* Atur lebar label agar otomatis */
+        width: auto; 
         margin-right: 0;
         margin-bottom: 5px;
     }

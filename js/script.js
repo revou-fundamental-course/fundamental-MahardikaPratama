@@ -78,14 +78,6 @@ function showSlides() {
 // Inisiasi slide pertama
 showSlides();
 
-// Event listener untuk mengganti nama pengguna
-document.getElementById('replaceName').addEventListener('click', function() {
-    let userName = prompt('Masukkan nama baru:');
-    if (userName) {
-        document.getElementById('username').textContent = userName;
-    }
-});
-
 // Event listener saat DOM di-load untuk tombol CV
 document.addEventListener('DOMContentLoaded', function() {
     const cvBtn = document.getElementById('cvBtn');
